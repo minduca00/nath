@@ -33,7 +33,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 ::selection {
@@ -145,7 +145,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 44%;
   filter: saturate(0.9) contrast(1.04);
 }
 
@@ -187,8 +187,12 @@ button {
 .feature-copy h2,
 .gallery-header h2,
 .cta-copy h2,
-.section-heading h2 {
-  font-family: "Cormorant Garamond", serif;
+.section-heading h2,
+.philosophy h2,
+.values h2,
+.trajectory h2,
+.portfolio h2 {
+  font-family: "Cinzel", serif;
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 0.88;
@@ -200,12 +204,53 @@ button {
   margin-bottom: 18px;
 }
 
+.hero-copy {
+  position: absolute;
+  z-index: 2;
+  bottom: clamp(94px, 13vh, 150px);
+  left: clamp(32px, 5vw, 72px);
+  width: min(600px, 53%);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.66);
+}
+
+.hero-copy .eyebrow {
+  color: var(--color-silver);
+}
+
+.hero-copy .eyebrow span {
+  padding: 0 4px;
+  color: var(--color-red-satin);
+}
+
+.hero-copy h1 {
+  max-width: 10ch;
+  font-size: clamp(2.7rem, 5.6vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: 0.015em;
+}
+
+.hero-lead {
+  margin: 14px 0 10px;
+  color: var(--color-silver);
+  font-family: "Cinzel", serif;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  line-height: 1.5;
+}
+
+.hero-intro {
+  max-width: 54ch;
+  margin: 0 0 18px;
+  color: rgba(243, 243, 243, 0.88);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
 .headline {
   margin: 0 0 24px;
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--text);
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cinzel", serif;
   letter-spacing: 0.02em;
   max-width: 18ch;
 }
@@ -228,7 +273,7 @@ button {
   letter-spacing: 0.12rem;
   font-size: 0.68rem;
   background: var(--button);
-  transition: transform 0.25s ease, opacity 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
 .button.secondary {
@@ -270,8 +315,9 @@ button {
 
 .about-visual img {
   width: 100%;
-  height: 680px;
+  height: clamp(460px, 48vw, 620px);
   object-fit: cover;
+  object-position: 42% center;
   filter: contrast(1.08) saturate(0.88);
 }
 
@@ -281,22 +327,29 @@ button {
 
 .about-copy .quote-mark {
   font-size: clamp(3rem, 4vw, 5rem);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   max-width: 10ch;
-  line-height: 0.9;
+  line-height: 0.96;
+}
+
+.about-subtitle {
+  margin: -10px 0 22px;
+  color: var(--color-silver);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .about-text p {
   margin: 0 0 18px;
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.8;
   color: rgba(255, 255, 255, 0.8);
-  max-width: 62ch;
+  max-width: 56ch;
 }
 
 .concept-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-top: 10px;
 }
@@ -306,10 +359,29 @@ button {
   padding-top: 16px;
 }
 
+.about-areas {
+  margin-top: 26px;
+  gap: 12px 20px;
+}
+
+.about-areas article {
+  padding-top: 12px;
+}
+
+.about-areas h3 {
+  margin: 0;
+  color: var(--color-silver);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
 .concept-grid h3,
 .video-card h3,
 .card-body h3 {
   margin: 0 0 8px;
+  font-family: "Cinzel", serif;
   letter-spacing: 0.12rem;
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -323,6 +395,144 @@ button {
   margin: 0;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
+}
+
+.philosophy .section-heading,
+.values .section-heading,
+.portfolio .section-heading {
+  margin-bottom: 22px;
+}
+
+.philosophy .section-heading h2,
+.values .section-heading h2,
+.trajectory h2,
+.portfolio .section-heading h2 {
+  max-width: 16ch;
+  font-size: clamp(2.5rem, 4.4vw, 4.5rem);
+  line-height: 1.08;
+}
+
+.philosophy-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+  align-items: center;
+  gap: clamp(28px, 7vw, 100px);
+}
+
+.philosophy-copy,
+.portfolio-intro {
+  max-width: 68ch;
+}
+
+.philosophy-copy p,
+.portfolio-intro p,
+.values-intro,
+.language-intro,
+.gallery-header > p:not(.label),
+.videos-intro,
+.trajectory-copy p,
+.contact-copy {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.philosophy-copy p,
+.portfolio-intro p,
+.gallery-header > p:not(.label),
+.contact-copy {
+  margin: 0 0 16px;
+}
+
+.philosophy-words {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  color: var(--color-silver);
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.05rem, 2vw, 1.55rem);
+}
+
+.values-intro {
+  max-width: 68ch;
+  margin: 0 0 30px;
+}
+
+.values-grid,
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 24px;
+}
+
+.values-grid article,
+.portfolio-grid article {
+  min-width: 0;
+  padding: 18px 0 20px;
+  border-top: 1px solid rgba(192, 192, 192, 0.35);
+}
+
+.values-grid h3,
+.portfolio-grid h3 {
+  margin: 0 0 8px;
+  color: var(--color-silver);
+  font-family: "Cinzel", serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.values-grid p,
+.portfolio-grid p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.trajectory {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+  align-items: start;
+  gap: 14px 40px;
+  padding: 44px 34px;
+  border-top: 1px solid rgba(184, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(192, 192, 192, 0.16);
+  background:
+    linear-gradient(105deg, rgba(74, 0, 0, 0.24), transparent 64%),
+    var(--color-black);
+}
+
+.trajectory > .label {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.trajectory h2 {
+  font-size: clamp(2.5rem, 4.4vw, 4.5rem);
+}
+
+.trajectory-copy {
+  max-width: 60ch;
+}
+
+.trajectory-copy p {
+  margin: 0;
+}
+
+.portfolio-intro {
+  margin: 0 0 30px;
+}
+
+.language-intro,
+.videos-intro {
+  max-width: 70ch;
+  margin: -8px 0 28px;
+}
+
+.gallery-header > p:not(.label) {
+  max-width: 68ch;
 }
 
 .feature {
@@ -341,7 +551,7 @@ button {
 
 .feature-image {
   position: relative;
-  min-height: 360px;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   box-shadow: 0 20px 55px rgba(0, 0, 0, 0.48);
 }
@@ -349,8 +559,8 @@ button {
 .feature-image img {
   width: 100%;
   height: 100%;
-  min-height: 500px;
   object-fit: cover;
+  object-position: center center;
   filter: contrast(1.15) saturate(0.8);
 }
 
@@ -419,7 +629,7 @@ button {
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: rgba(184, 0, 0, 0.72);
 }
 
@@ -427,6 +637,22 @@ button {
   width: 100%;
   height: 300px;
   object-fit: cover;
+}
+
+.language-grid .card:nth-child(1) img {
+  object-position: center 24%;
+}
+
+.language-grid .card:nth-child(2) img {
+  object-position: center 26%;
+}
+
+.language-grid .card:nth-child(3) img {
+  object-position: center 22%;
+}
+
+.language-grid .card:nth-child(4) img {
+  object-position: center 28%;
 }
 
 .card.tall {
@@ -447,8 +673,7 @@ button {
 
 .mosaic {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 260px 260px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   margin-top: 28px;
 }
@@ -459,6 +684,7 @@ button {
   border: 0;
   padding: 0;
   overflow: hidden;
+  aspect-ratio: 5 / 6;
   background: var(--color-deep-wine);
   outline: 1px solid rgba(184, 0, 0, 0.2);
   outline-offset: -1px;
@@ -482,21 +708,6 @@ button {
   filter: brightness(0.95);
 }
 
-.tile-1 {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
-
-.tile-2 {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.tile-3 {
-  grid-column: 2;
-  grid-row: 2;
-}
-
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(220px, 1fr));
@@ -509,64 +720,12 @@ button {
   gap: 12px;
 }
 
-.video-facade {
-  position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border: 1px solid rgba(192, 192, 192, 0.22);
-  padding: 0;
-  background:
-    linear-gradient(135deg, rgba(74, 0, 0, 0.38), transparent 68%),
-    var(--card);
-}
-
-.video-facade img {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  object-fit: cover;
-}
-
 .video-player {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: auto;
   border: 0;
   background: var(--card);
-}
-
-.video-facade .play-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 62px;
-  height: 44px;
-  transform: translate(-50%, -50%);
-  border-radius: 12px;
-  background: rgba(184, 0, 0, 0.94);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
-}
-
-.video-facade .play-icon::after {
-  position: absolute;
-  top: 50%;
-  left: 53%;
-  width: 0;
-  height: 0;
-  transform: translate(-50%, -50%);
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
-  border-left: 14px solid var(--color-off-white);
-  content: "";
-}
-
-.video-facade:hover .play-icon,
-.video-facade:focus-visible .play-icon {
-  transform: translate(-50%, -50%) scale(1.08);
-  background: var(--color-deep-wine);
 }
 
 .cta {
@@ -596,6 +755,16 @@ button {
 .cta-box p {
   margin-bottom: 18px;
   font-size: 1rem;
+}
+
+.cta-copy .contact-copy {
+  max-width: 56ch;
+  margin: 18px 0 0;
+  font-size: 0.92rem;
+}
+
+.cta-copy .contact-copy + .contact-copy {
+  margin-top: 10px;
 }
 
 .social-links {
@@ -639,10 +808,45 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 18px 28px;
   padding: 18px 34px 0;
   color: var(--muted);
   font-size: 0.78rem;
+}
+
+.footer-brand {
+  display: grid;
+  gap: 5px;
+}
+
+.footer-brand strong {
+  color: var(--text);
+  font-family: "Cinzel", serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.footer-brand span {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-brand i {
+  padding: 0 4px;
+  color: var(--color-red-satin);
+  font-style: normal;
+}
+
+.footer-signature,
+.site-footer small {
+  margin: 0;
+}
+
+.site-footer small {
+  font-size: 0.68rem;
 }
 
 .site-footer .social-links {
@@ -660,13 +864,14 @@ button {
   background: rgba(11, 11, 11, 0.94);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0s;
+  transition: opacity 0.24s ease, visibility 0s linear 0.24s;
   z-index: 1000;
 }
 
 .lightbox.is-open {
   opacity: 1;
   visibility: visible;
+  transition-delay: 0s, 0s;
 }
 
 .lightbox-dialog {
@@ -746,6 +951,8 @@ button {
   .about,
   .feature,
   .cta,
+  .philosophy-content,
+  .trajectory,
   .video-grid {
     grid-template-columns: 1fr;
   }
@@ -756,6 +963,11 @@ button {
 
   .language-grid {
     grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+
+  .values-grid,
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .card.wide {
@@ -811,16 +1023,58 @@ button {
 
   .hero-logo {
     right: 18px;
-    bottom: 22px;
-    width: min(50vw, 260px);
+    top: 68px;
+    bottom: auto;
+    width: min(38vw, 180px);
+  }
+
+  .hero-copy {
+    bottom: 24px;
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.45rem, 11vw, 4rem);
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 10px;
+    font-size: 0.58rem;
+  }
+
+  .hero-lead {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+
+  .hero-intro {
+    margin-bottom: 12px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .hero-copy .cta-row {
+    gap: 8px;
+  }
+
+  .hero-copy .button {
+    padding: 0.72rem 0.8rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.07rem;
   }
 
   .about-visual img {
     height: min(112vw, 440px);
+    object-position: 42% center;
   }
 
   .feature-image img {
-    min-height: 360px;
+    object-position: center center;
+  }
+
+  .mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .concept-grid,
@@ -833,17 +1087,27 @@ button {
     grid-column: auto;
   }
 
-  .mosaic {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 220px 220px;
-  }
-
-  .tile img {
-    height: 100%;
-  }
-
   .concept-grid {
     grid-template-columns: 1fr;
+  }
+
+  .concept-grid.about-areas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .values-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-words {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+
+  .trajectory {
+    padding: 28px 20px;
   }
 
   .feature,
@@ -887,14 +1151,6 @@ button {
 @media (max-width: 420px) {
   .mosaic {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 280px);
-  }
-
-  .tile-1,
-  .tile-2,
-  .tile-3 {
-    grid-column: 1;
-    grid-row: auto;
   }
 
   .site-footer {
@@ -933,9 +1189,23 @@ button {
   .lightbox.is-open {
     transition: none !important;
   }
+}
 
-  .lightbox,
-  .lightbox.is-open {
-    transition: none !important;
+.section.reveal-ready {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.section.reveal-ready.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section.reveal-ready,
+  .section.reveal-ready.is-visible {
+    opacity: 1;
+    transform: none;
   }
 }
